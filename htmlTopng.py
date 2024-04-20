@@ -12,7 +12,7 @@ mapUrl = 'file://{0}/{1}'.format(os.getcwd(), mapFname)
 
 # use selenium to save the html as png image
 driver = webdriver.Firefox()
-driver.set_window_size(1920*100, 1080*100) 
+driver.set_window_size(1920*10, 1080*10) 
 driver.get(mapUrl)
 # wait for 5 seconds for the maps and other assets to be loaded in the browser
 time.sleep(70)
