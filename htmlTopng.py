@@ -4,7 +4,7 @@ import os
 import time
 
 
-mapFname = 'map.html'
+mapFname = './Data/map.html'
 
 mapUrl = 'file://{0}/{1}'.format(os.getcwd(), mapFname)
 

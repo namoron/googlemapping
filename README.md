@@ -1,5 +1,5 @@
 ## Google Map のロケーション履歴を取得してマッピングするプログラムです
-プログラムをクローンして[Google データ エクスポート](https://takeout.google.com/)でダウンロードしたフォルダのTakeoutを同じ階層に置く.
+プログラムをクローンして[Google データ エクスポート](https://takeout.google.com/)でダウンロードしたRecords.jsonをDataフォルダの
 
 forReco0.py はRecord.json から日時,座標のみを取り出してcsvに変換,htmlに出力するプログラム.
 
