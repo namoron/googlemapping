@@ -1,13 +1,27 @@
-## Google Map のロケーション履歴を取得してマッピングするプログラムです
-プログラムをクローンして[Google データ エクスポート](https://takeout.google.com/)でダウンロードしたRecords.jsonをDataフォルダの
+## Google Map のロケーション履歴を取得してマッピングするプログラム
 
-forReco0.py はRecord.json から日時,座標のみを取り出してcsvに変換,htmlに出力するプログラム.
+このレポジトリをダウンロードして[Google データ エクスポート](https://takeout.google.com/)でダウンロードしたRecords.jsonをDataフォルダに配置します。
 
-[kepler.gl](https://kepler.gl/demo) で見たいときはこのcsvを用いる.
+### プログラムの概要
 
-htmlをpng に変換したいときはhtmlTopng.py を用いる.
+1. `remove.py`:
+   - Records.json から位置情報データをフィルタリングし、速度や精度の閾値に基づいて不要なデータを削除します。
+   - フィルタリングされたデータは `FilteredRecords.json` として保存されます。
 
-各種パッケージや値の調整を行う.
+2. `jsonToHTML.py`:
+   - `FilteredRecords.json` を読み込み、位置情報データを整形して Folium を使用して地図上にプロットします。
+   - プロットされた地図は `map.html` として保存されます。
+
+3. `htmlTopng.py`:
+   - `map.html` を読み込み、Selenium を使用して地図を PNG 画像として保存します。
+
+### 使用方法
+
+1. 必要なパッケージをインストールします。
+
+   ```sh
+   pip install -r requirements.txt
+   ```
 
 # 完成図
 ![image](https://github.com/user-attachments/assets/eac7b683-69ea-4872-9f08-8304d6fbce4d)
