@@ -12,6 +12,10 @@ ACCURACY_THRESHOLD = 1500
 INPUT_FILENAME = './Data/FilteredRecords.json'
 # 出力ファイル名
 OUTPUT_FILENAME = './Data/map.html'
+# CSV出力設定
+CSV_OUTPUT = True
+# CSV出力ファイル名
+CSV_OUTPUT_FILENAME = './Data/output.csv'
 
 def seikei():
     t = []
@@ -39,7 +43,8 @@ def seikei():
         i += 1
     d2 = pd.DataFrame({'date': t, 'lat': l2, 'lon': l})
     d2['date'] = d2['date'].dt.strftime('%Y-%m-%d %H:%M:%S')
-    # d2.to_csv('hist.csv')
+    if CSV_OUTPUT:
+        d2.to_csv(CSV_OUTPUT_FILENAME)
     m = folium.Map(
         location=[35.0, 135.0], 
         zoom_start=10,
