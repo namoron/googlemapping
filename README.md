@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/4946c8a4-b374-4d08-8ea8-e759ebefb476)## Google Map のロケーション履歴を取得してマッピングするプログラムです
+## Google Map のロケーション履歴を取得してマッピングするプログラムです
 プログラムをクローンして[Google データ エクスポート](https://takeout.google.com/)でダウンロードしたRecords.jsonをDataフォルダの
 
 forReco0.py はRecord.json から日時,座標のみを取り出してcsvに変換,htmlに出力するプログラム.
