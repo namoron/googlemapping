@@ -8,3 +8,8 @@
 /timeline.json
 /out.csv
 /outc.csv
+
+# 実際の位置情報データ・生成物（秘匿情報）
+/export_from_phone/
+/kepler_timeline_map.html
+/timeline_map.html
