@@ -1,35 +1,48 @@
-# Google Map のロケーション履歴を取得してマッピングするプログラム
-## 使い方
-1. このレポジトリをダウンロード
+# Kepler.gl マップビューア
 
-2. [Google データ エクスポート](https://takeout.google.com/)でダウンロードしたRecords.jsonをDataフォルダにいれる
+このプロジェクトは、CSV 形式の位置情報データを Kepler.gl を使用して可視化するためのシンプルなウェブアプリケーションです。
 
-3. 各種パッケージをインストール
+## 機能
 
-4. `remove.py`を実行して、不要な位置情報データを削除する
+- CSV ファイルから位置情報データを読み込み
+- Kepler.gl を使用した高度な地図可視化
+- 時系列データの表示
 
-5. `jsonToHTML.py`を実行して、地図上にプロットし、HTML ファイルとして保存する
+## 使用方法
 
+### 前提条件
 
-[kepler.gl](https://kepler.gl/demo) などで見たいときはoutput.csvを用いる.
+- Node.js (v14 以上)
+- npm または yarn
 
-## 完成図
-![image](https://github.com/user-attachments/assets/eac7b683-69ea-4872-9f08-8304d6fbce4d)
+### インストール
 
+```bash
+# 依存関係のインストール
+npm install
+```
 
-## スクリプトの説明
+### 実行
 
-### `remove.py`
-`remove.py` は、Google データ エクスポートから取得した `Records.json` ファイルをフィルタリングし、速度と精度の閾値に基づいて不要な位置情報データを削除します。フィルタリングされたデータは `FilteredRecords.json` として保存されます。
+```bash
+# 開発サーバーの起動
+npm start
+```
 
-- 入力ファイル: `./Data/Records.json`
-- 出力ファイル: `./Data/FilteredRecords.json`
+ブラウザで http://localhost:3000 が自動的に開き、アプリケーションが表示されます。
 
-### `jsonToHTML.py`
-`jsonToHTML.py` は、フィルタリングされた位置情報データを読み込み、Folium を使用して地図上にプロットし、HTML ファイルとして保存します。
+## データ形式
 
-- 入力ファイル: `./Data/FilteredRecords.json`
-- 出力ファイル: `./Data/map.html`
+アプリケーションは以下の形式の CSV ファイルを想定しています：
 
-## 参考にしたサイト
-- [Googleロケーション履歴を使って整形(pandas)と地図上に表示(folium)させることを考える[初心者のPython3]](https://qiita.com/jam-goat/items/99dbdd4976544686a0ba)
+```
+date,lat,lon,latnext,lonnext
+2018-03-21 10:01:34,35.6890155,139.6368208,35.6890155,139.6368208
+...
+```
+
+- `date`: 日時（YYYY-MM-DD HH:MM:SS 形式）
+- `lat`: 緯度
+- `lon`: 経度
+- `latnext`: 次のポイントの緯度
+- `lonnext`: 次のポイントの経度
