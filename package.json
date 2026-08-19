@@ -1,0 +1,12 @@
+{
+  "name": "kepler-map-viewer",
+  "version": "1.0.0",
+  "description": "Kepler.gl を使用した位置情報の可視化",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server public -p 3000 -o"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
